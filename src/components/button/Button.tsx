@@ -1,5 +1,11 @@
-import React from "react";
+import { StyledButton, ButtonTips } from "./styles";
 
 export const Button = () => {
-  return <div>Button</div>;
+  const buttonText = "Ohhhoooo";
+
+  return (
+    <StyledButton>
+      <ButtonTips>{buttonText}</ButtonTips>
+    </StyledButton>
+  );
 };

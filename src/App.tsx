@@ -1,5 +1,10 @@
-import React from "react";
+import { Form } from "./components/form/Form";
+import { Wrapper } from "./styles";
 
 export const App = () => {
-  return <div>App</div>;
+  return (
+    <Wrapper>
+      <Form />
+    </Wrapper>
+  );
 };
