@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Colors } from "../../types";
 
-const StyledForm = styled.div`
+const StyledForm = styled.form`
   background-color: ${Colors.Gray};
   max-width: 1512px;
   text-align: center;

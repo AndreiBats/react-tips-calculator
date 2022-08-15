@@ -9,3 +9,8 @@ export enum Colors {
 export enum Pictures {
   Beer = "🍻",
 }
+
+export interface IOption {
+  value: string;
+  label: string;
+}

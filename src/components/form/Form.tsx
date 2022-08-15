@@ -1,22 +1,20 @@
 import { useState } from "react";
 import { Button } from "../button/Button";
 import { CustomSelect } from "../customselect/CustomSelect";
-import { Input } from "../input/Input";
+import { InputBill } from "../input/InputBill";
+import { InputPerson } from "../input/inputPerson";
+
 import { Description, StyledForm, Title, Total } from "./styles";
 
 export const Form = () => {
-  const [total, setTotal] = useState(0);
-
-  const handleChange = () => {
-    setTotal(total + 1);
-  };
   return (
-    <StyledForm onSubmit={handleChange}>
+    <StyledForm>
       <Title>Welcome to App</Title>
       <Description>Let’s go calculate your tips</Description>
-      <Input />
+      <InputBill />
+      <InputPerson />
       <CustomSelect />
-      <Total>Total: {total}</Total>
+      <Total>Total: {}</Total>
       <Button />
     </StyledForm>
   );

@@ -4,6 +4,7 @@ const StyledInput = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const BillInput = styled.input`
   border-radius: 30px;
   border: none;
