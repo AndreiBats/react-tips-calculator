@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useInput } from "../../hooks/useInput";
-import { IOption } from "../../types";
 import { Button } from "../button/Button";
 import { CustomSelect, options } from "../customselect/CustomSelect";
 import { Input } from "../input/Input";
@@ -14,8 +13,8 @@ export const Form = () => {
   const [value, setValue] = useState(0);
 
   const handleChangeValue = (event: any): void => {
+    // TODO: fix type
     const percent = +currentValue + 100;
-
     const total = (+userBill.value / +userPersons.value / 100) * percent;
 
     setValue(total);

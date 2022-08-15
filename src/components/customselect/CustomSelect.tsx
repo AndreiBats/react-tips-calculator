@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Select from "react-select";
 import { IOption } from "../../types";
 
@@ -10,6 +9,7 @@ export const options: IOption[] = [
 
 interface IProps {
   onChange: (event: any) => void;
+  // TODO: fix type
   value: IOption | undefined | string;
 }
 
