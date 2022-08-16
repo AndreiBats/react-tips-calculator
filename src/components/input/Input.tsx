@@ -8,10 +8,10 @@ interface IProps {
   title: string;
 }
 
-export const Input = ({ placeholder, onChange, title }: IProps) => {
+export const Input = ({ placeholder, onChange, title, type }: IProps) => {
   return (
     <StyledInput
-      type="text"
+      type={type}
       placeholder={placeholder}
       onChange={onChange}
       title={title}

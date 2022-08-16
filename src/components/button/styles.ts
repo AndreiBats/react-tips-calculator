@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { Colors } from "../../types";
 
-const StyledButton = styled.div``;
-
-const ButtonTips = styled.button`
+const StyledButton = styled.button`
+  width: 100%;
   text-align: center;
   background-color: ${Colors.Green};
   padding: 13px 140px;
@@ -13,6 +12,13 @@ const ButtonTips = styled.button`
   line-height: 35px;
   color: ${Colors.White};
   margin-top: 45px;
+
+  &:disabled {
+    background: ${Colors.Green};
+    opacity: 0.5;
+  }
+
+  transition: all 0.5s;
 `;
 
-export { StyledButton, ButtonTips };
+export { StyledButton };

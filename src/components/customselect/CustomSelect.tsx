@@ -1,5 +1,6 @@
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 import { IOption } from "../../types";
+import { CustomStyles } from "./styles";
 
 export const options: IOption[] = [
   { value: "10", label: "10%" },
@@ -8,11 +9,17 @@ export const options: IOption[] = [
 ];
 
 interface IProps {
-  onChange: (event: any) => void;
-  // TODO: fix type
+  onChange: (event: SingleValue<string | IOption>) => void;
   value: IOption | undefined | string;
 }
 
 export const CustomSelect = ({ onChange, value }: IProps) => {
-  return <Select options={options} onChange={onChange} value={value} />;
+  return (
+    <Select
+      options={options}
+      onChange={onChange}
+      value={value}
+      styles={CustomStyles}
+    />
+  );
 };

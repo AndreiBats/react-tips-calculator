@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const StyledInput = styled.input`
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 30px;

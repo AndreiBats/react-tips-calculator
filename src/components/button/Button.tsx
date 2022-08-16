@@ -1,10 +1,15 @@
-import { StyledButton, ButtonTips } from "./styles";
 import { Pictures } from "../../types";
+import { StyledButton } from "./styles";
 
-export const Button = () => {
+interface IProps {
+  type: "button" | "submit" | "reset" | undefined;
+  disabled: boolean;
+}
+
+export const Button = ({ disabled, type }: IProps) => {
   return (
-    <StyledButton>
-      <ButtonTips type="submit">Ohhhoooo {Pictures.Beer}</ButtonTips>
+    <StyledButton disabled={disabled} type={type}>
+      Ohhhoooo {Pictures.Beer}
     </StyledButton>
   );
 };
