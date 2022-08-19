@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Colors } from "../types";
+import { Color } from "../types";
 
 export const GlobalStyles = createGlobalStyle`
 * {
@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    background-color: ${Colors.LightGreen};
+    background-color: ${Color.LightGreen};
     
 }
 `;

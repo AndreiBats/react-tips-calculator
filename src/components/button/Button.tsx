@@ -1,4 +1,3 @@
-import { Pictures } from "../../types";
 import { StyledButton } from "./styles";
 
 interface IProps {
@@ -9,7 +8,7 @@ interface IProps {
 export const Button = ({ disabled, type }: IProps) => {
   return (
     <StyledButton disabled={disabled} type={type}>
-      Ohhhoooo {Pictures.Beer}
+      Ohhhoooo 🍻
     </StyledButton>
   );
 };

@@ -1,4 +1,17 @@
 import styled from "styled-components";
-import { Colors } from "./types";
+import { Color, Media } from "./types";
+import circles from "./assets/circles.svg";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  background: url(${circles}) no-repeat, ${Color.Gray};
+  max-width: 1440px;
+  margin: 70px auto 0;
+
+  ${Media.Medium} {
+    max-width: 744px;
+
+    ${Media.Small} {
+      max-width: 410px;
+    }
+  }
+`;

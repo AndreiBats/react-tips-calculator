@@ -1,20 +1,24 @@
 import styled from "styled-components";
-import { Colors } from "../../types";
+import { Color, Media } from "../../types";
 
 const StyledButton = styled.button`
   width: 100%;
   text-align: center;
-  background-color: ${Colors.Green};
+  background-color: ${Color.Green};
   padding: 13px 140px;
   border: none;
   font-weight: 400;
   font-size: 24px;
   line-height: 35px;
-  color: ${Colors.White};
+  color: ${Color.White};
   margin-top: 45px;
 
+  ${Media.Medium} {
+    padding: 13px 50px;
+  }
+
   &:disabled {
-    background: ${Colors.Green};
+    background: ${Color.Green};
     opacity: 0.5;
   }
 

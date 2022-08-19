@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { SingleValue } from "react-select";
+import { FormEvent, useEffect, useState } from "react";
 import { useInput } from "../../hooks/useInput";
 import { IOption } from "../../types";
 import { Button } from "../button/Button";
@@ -11,30 +10,26 @@ export const Form = () => {
   const userBill = useInput("");
   const userPersons = useInput("");
 
-  const [tips, setTips] = useState<string>(options[0].value);
+  const [tips, setTips] = useState<number>(options[0].value);
+  const [total, setTotal] = useState<string>("0.00");
+  const [isActive, setIsActive] = useState<boolean>(true);
 
-  const getValue = () => {
+  const getValue = (): IOption | string | undefined => {
     return tips ? options.find((option) => option.value === tips) : "";
   };
 
-  const handleTips = (event: SingleValue<string | IOption>): void => {
-    setTips((event as IOption).value);
+  const handleTips = (tips: any): void => {
+    setTips(tips.value);
   };
-  const [total, setTotal] = useState<string>("0.00");
+  console.log(tips);
 
-  const handleChangeTotal = (
-    event: React.SyntheticEvent<HTMLFormElement>
-  ): void => {
-    const totalValue = (
-      (+userBill.value / +userPersons.value / 100) *
-      (+tips + 100)
-    ).toFixed(2);
+  const handleTotal = (event: FormEvent<HTMLFormElement>): void => {
+    setTotal(
+      ((+userBill.value / +userPersons.value / 100) * (tips + 100)).toFixed(2)
+    );
 
-    setTotal(totalValue);
     event.preventDefault();
   };
-
-  const [isActive, setIsActive] = useState<boolean>(true);
 
   useEffect(() => {
     userBill.value && userPersons.value
@@ -43,22 +38,22 @@ export const Form = () => {
   }, [userBill.value, userPersons.value]);
 
   return (
-    <StyledForm onSubmit={handleChangeTotal}>
+    <StyledForm onSubmit={handleTotal}>
       <Title>Welcome to App</Title>
       <Description>Let’s go calculate your tips</Description>
       <Input
-        type="text"
+        type="number"
         placeholder="Enter bill"
         {...userBill}
         title="Используйте числовой формат"
       />
       <Input
-        type="text"
+        type="number"
         placeholder="Enter persons"
         {...userPersons}
         title="Используйте числовой формат"
       />
-      <CustomSelect onChange={handleTips} value={getValue()} />
+      <CustomSelect onChange={handleTips} value={getValue()} />;
       <Total>Total: {total} $</Total>
       <Button type="submit" disabled={isActive}></Button>
     </StyledForm>
