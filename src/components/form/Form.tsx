@@ -19,6 +19,7 @@ export const Form = () => {
   };
 
   const handleTips = (tips: any): void => {
+    // ! I don't know why I have to use any here
     setTips(tips.value);
   };
   console.log(tips);
