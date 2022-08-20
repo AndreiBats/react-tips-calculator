@@ -28,7 +28,7 @@ export const Form = () => {
   return (
     <StyledForm onSubmit={handleTotal}>
       <Title>Welcome to App</Title>
-      <Description>Let’s go calculate your tips</Description>
+      <Description>Let’s go calculate your bill</Description>
       <Input
         type="number"
         placeholder="Enter bill"
