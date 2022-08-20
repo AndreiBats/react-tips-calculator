@@ -1,9 +1,8 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useInput } from "../../hooks/useInput";
-import { IOption } from "../../types";
-import { Button } from "../button/Button";
-import { CustomSelect, options } from "../customselect/CustomSelect";
-import { Input } from "../input/Input";
+import { Button } from "../Button/Button";
+import { CustomSelect, options } from "../Customselect/CustomSelect";
+import { Input } from "../Input/Input";
 import { Description, StyledForm, Title, Total } from "./styles";
 
 export const Form = () => {
@@ -11,25 +10,13 @@ export const Form = () => {
   const userPersons = useInput("");
 
   const [tips, setTips] = useState<number>(options[0].value);
-  const [total, setTotal] = useState<string>("0.00");
+  const [total, setTotal] = useState<number>(0);
   const [isActive, setIsActive] = useState<boolean>(true);
 
-  const getValue = (): IOption | string | undefined => {
-    return tips ? options.find((option) => option.value === tips) : "";
-  };
-
-  const handleTips = (tips: any): void => {
-    // ! I don't know why I have to use any here
-    setTips(tips.value);
-  };
-  console.log(tips);
-
   const handleTotal = (event: FormEvent<HTMLFormElement>): void => {
-    setTotal(
-      ((+userBill.value / +userPersons.value / 100) * (tips + 100)).toFixed(2)
-    );
-
     event.preventDefault();
+
+    setTotal((+userBill.value / +userPersons.value / 100) * (tips + 100));
   };
 
   useEffect(() => {
@@ -54,8 +41,8 @@ export const Form = () => {
         {...userPersons}
         title="Используйте числовой формат"
       />
-      <CustomSelect onChange={handleTips} value={getValue()} />;
-      <Total>Total: {total} $</Total>
+      <CustomSelect tips={tips} setTips={setTips} />
+      <Total>Total: {total.toFixed(2)} $</Total>
       <Button type="submit" disabled={isActive}></Button>
     </StyledForm>
   );

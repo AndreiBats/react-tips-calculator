@@ -9,17 +9,24 @@ export const options: IOption[] = [
 ];
 
 interface IProps {
-  onChange: (tips: SingleValue<IOption | string>) => void;
-  value: IOption | string | undefined;
+  tips: number;
+  setTips: (value: number) => void;
 }
-console.log(onchange);
 
-export const CustomSelect = ({ onChange, value }: IProps) => {
+export const CustomSelect = ({ tips, setTips }: IProps) => {
+  const getValue = () => {
+    return tips ? options.find((option) => option.value === tips) : options[0];
+  };
+
+  const handleTips = (option: SingleValue<IOption>): void => {
+    if (option) setTips(option.value);
+  };
+
   return (
     <Select
       options={options}
-      onChange={onChange}
-      value={value}
+      onChange={handleTips}
+      value={getValue()}
       styles={CustomStyles}
     />
   );
