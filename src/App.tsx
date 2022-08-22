@@ -1,5 +1,5 @@
 import { Form } from "./components/Form/Form";
-import { Wrapper } from "./styles";
+import { Wrapper } from "./ui/styles";
 
 export const App = () => {
   return (

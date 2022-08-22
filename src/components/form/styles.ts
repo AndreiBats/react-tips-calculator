@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Color, Media } from "../../types";
+import { Color, Media } from "../../ui/index";
 
 const StyledForm = styled.form`
   text-align: center;
   max-width: 456px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 50px 0;
 
   ${Media.Medium} {
     max-width: 320px;
@@ -21,7 +21,7 @@ const Title = styled.h1`
   font-size: 40px;
   line-height: 58px;
   color: ${Color.Black};
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 
   ${Media.Medium} {
     font-size: 40px;
@@ -34,7 +34,7 @@ const Description = styled.p`
   font-size: 32px;
   line-height: 38px;
   color: rgba(117, 108, 108, 0.57);
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 
   ${Media.Medium} {
     font-size: 24px;
@@ -46,7 +46,15 @@ const Total = styled.span`
   font-size: 24px;
   line-height: 35px;
   color: ${Color.Black};
-  margin-bottom: 45px;
+  padding-right: 310px;
+
+  ${Media.Medium} {
+    padding-right: 180px;
+  }
+
+  ${Media.Small} {
+    padding-right: 180px;
+  }
 `;
 
 export { StyledForm, Title, Description, Total };

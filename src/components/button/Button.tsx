@@ -1,13 +1,13 @@
 import { StyledButton } from "./styles";
 
 interface IProps {
-  type: "button" | "submit" | "reset" | undefined;
-  disabled: boolean;
+  type: "button" | "submit" | "reset";
+  isDisabled: boolean;
 }
 
-export const Button = ({ disabled, type }: IProps) => {
+export const Button = ({ isDisabled: isActive, type }: IProps) => {
   return (
-    <StyledButton disabled={disabled} type={type}>
+    <StyledButton disabled={isActive} type={type}>
       Ohhhoooo 🍻
     </StyledButton>
   );

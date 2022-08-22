@@ -1,4 +1,4 @@
-import { Color } from "../../types";
+import { Color } from "../../ui/index";
 
 export const CustomStyles = {
   control: () => ({
@@ -6,8 +6,8 @@ export const CustomStyles = {
     display: "flex",
     background: Color.White,
     borderRadius: "30px",
-    marginBottom: "45px",
-    padding: "15px",
+    marginBottom: "30px",
+    padding: "15px 15px 15px 50px",
   }),
 
   indicatorSeparator: () => ({

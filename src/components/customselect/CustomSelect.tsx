@@ -28,6 +28,7 @@ export const CustomSelect = ({ tips, setTips }: IProps) => {
       onChange={handleTips}
       value={getValue()}
       styles={CustomStyles}
+      isSearchable={false}
     />
   );
 };

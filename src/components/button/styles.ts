@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color, Media } from "../../types";
+import { Color, Media } from "../../ui/index";
 
 const StyledButton = styled.button`
   width: 100%;
@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   font-size: 24px;
   line-height: 35px;
   color: ${Color.White};
-  margin-top: 45px;
+  margin-top: 20px;
 
   ${Media.Medium} {
     padding: 13px 50px;

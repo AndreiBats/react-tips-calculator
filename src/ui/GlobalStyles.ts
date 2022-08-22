@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { Color } from "../types";
+import { Color } from "../ui/index";
 
 export const GlobalStyles = createGlobalStyle`
 * {
@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
+    font-family: "Roboto", sans-serif;
     background-color: ${Color.LightGreen};
     
 }

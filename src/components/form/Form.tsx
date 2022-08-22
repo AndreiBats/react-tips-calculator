@@ -33,17 +33,17 @@ export const Form = () => {
         type="number"
         placeholder="Enter bill"
         {...userBill}
-        title="Используйте числовой формат"
+        title="Use only number"
       />
       <Input
         type="number"
         placeholder="Enter persons"
         {...userPersons}
-        title="Используйте числовой формат"
+        title="Use only number"
       />
       <CustomSelect tips={tips} setTips={setTips} />
       <Total>Total: {total.toFixed(2)} $</Total>
-      <Button type="submit" disabled={isActive}></Button>
+      <Button type="submit" isDisabled={isActive}></Button>
     </StyledForm>
   );
 };
