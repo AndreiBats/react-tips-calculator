@@ -12,5 +12,3 @@ export const useInput = (initialState: string = "") => {
     onChange,
   };
 };
-
-console.log(useInput);

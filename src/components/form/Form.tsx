@@ -34,12 +34,16 @@ export const Form = () => {
         placeholder="Enter bill"
         {...userBill}
         title="Use only number"
+        min="0"
+        step="0.01"
       />
       <Input
         type="number"
         placeholder="Enter persons"
         {...userPersons}
         title="Use only number"
+        min="1"
+        step="1"
       />
       <CustomSelect tips={tips} setTips={setTips} />
       <Total>Total: {total.toFixed(2)} $</Total>

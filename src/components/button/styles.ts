@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   font-size: 24px;
   line-height: 35px;
   color: ${Color.White};
-  margin-top: 20px;
+  margin-top: 45px;
 
   ${Media.Medium} {
     padding: 13px 50px;

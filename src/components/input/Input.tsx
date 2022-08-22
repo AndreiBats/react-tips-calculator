@@ -6,15 +6,26 @@ interface IProps {
   placeholder: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   title: string;
+  min: string;
+  step: string;
 }
 
-export const Input = ({ type, placeholder, onChange, title }: IProps) => {
+export const Input = ({
+  type,
+  placeholder,
+  onChange,
+  title,
+  min,
+  step,
+}: IProps) => {
   return (
     <StyledInput
       type={type}
       placeholder={placeholder}
       onChange={onChange}
       title={title}
+      min={min}
+      step={step}
     />
   );
 };

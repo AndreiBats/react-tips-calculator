@@ -21,7 +21,7 @@ const Title = styled.h1`
   font-size: 40px;
   line-height: 58px;
   color: ${Color.Black};
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 
   ${Media.Medium} {
     font-size: 40px;
@@ -34,7 +34,7 @@ const Description = styled.p`
   font-size: 32px;
   line-height: 38px;
   color: rgba(117, 108, 108, 0.57);
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 
   ${Media.Medium} {
     font-size: 24px;
@@ -46,7 +46,7 @@ const Total = styled.span`
   font-size: 24px;
   line-height: 35px;
   color: ${Color.Black};
-  padding-right: 310px;
+  padding-right: 300px;
 
   ${Media.Medium} {
     padding-right: 180px;

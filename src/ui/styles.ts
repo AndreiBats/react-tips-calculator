@@ -4,8 +4,8 @@ import circles from "../assets/circles.svg";
 
 export const Wrapper = styled.div`
   background: url(${circles}) no-repeat, ${Color.Gray};
-  max-width: 968px;
-  margin: 70px auto 0;
+  max-width: 1440px;
+  margin: 0 auto;
 
   ${Media.Medium} {
     max-width: 744px;
